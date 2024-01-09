@@ -24,7 +24,7 @@ app.post("/login-user", loginUserController);
 
 app.use(AuthMiddleWare);
 app.post("/add-order", addOrderController);
-app.post("/get-order", getOrderController);
+app.get("/get-order", getOrderController);
 
 
 mongoose.connect(process.env.MONGO_URL!)
