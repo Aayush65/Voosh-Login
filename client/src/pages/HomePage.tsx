@@ -7,7 +7,7 @@ const HomePage = () => {
     const { currPage } = useContext(context);
 
     return (
-        <div className='w-full min-h-screen bg-[#EEEEEE]'>
+        <div className='min-h-screen bg-[#EEEEEE]'>
             <Navbar />
             {currPage ? <NewOrder /> : <Orders />}
         </div>

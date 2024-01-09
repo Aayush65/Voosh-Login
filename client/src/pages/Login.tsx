@@ -102,7 +102,7 @@ const Login = () => {
                         <input 
                             className="p-2 rounded-xl placeholder:text-gray-400 md:w-[400px] text-black" 
                             onChange={(e) => detail.funct(e.target.value)} 
-                            type={detail.name.toLowerCase()} 
+                            type={detail.type} 
                             placeholder={detail.placeholder} 
                             value={detail.value || ""} />
                         <Link to="/register" className={`hover:underline self-start text-[13px] md:text-base ${index === loginDetails.length - 1 ? "": "hidden"}`}>Register Here</Link>
