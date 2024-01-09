@@ -3,6 +3,8 @@ import { Request, Response } from 'express';
 // import cors from 'cors';
 import { config } from 'dotenv';
 import mongoose from 'mongoose';
+import addUserController from './controllers/addUserController';
+import loginUserController from './controllers/loginUserController';
 
 config();
 const app = express();
@@ -11,6 +13,9 @@ app.use(express.json());
 // app.use(cors());
 
 app.get("/", (req: Request, res: Response) => res.send("Hello World!!"));
+
+app.post("/add-user", addUserController);
+app.post("/login-user", loginUserController);
 
 mongoose.connect(process.env.MONGO_URL!)
     .then(() => {
