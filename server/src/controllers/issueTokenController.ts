@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { statusOkay, unauthAccess } from "../views/view";
+import { serverError, statusOkay, unauthAccess } from "../views/view";
 import { ObjectId } from 'mongodb';
 import UserModel from '../models/Users';
 
@@ -38,6 +38,6 @@ export async function issueTokenController(req: Request, res: Response) {
         const { name } = userData;
         statusOkay(res, { accessToken, refreshToken, name })  
     } catch(err) {
-        unauthAccess(res);
+        serverError(res, err);
     }
 }
