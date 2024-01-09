@@ -17,12 +17,12 @@ app.use(express.json());
 // app.use(cors());
 
 app.get("/", (req: Request, res: Response) => res.send("Hello World!!"));
+app.get("/renew-token", issueTokenController);
 
 app.post("/add-user", addUserController);
 app.post("/login-user", loginUserController);
 
 app.use(AuthMiddleWare);
-app.get("/renew-token", issueTokenController);
 app.post("/add-order", addOrderController);
 app.post("/get-order", getOrderController);
 
