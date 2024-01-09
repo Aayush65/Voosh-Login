@@ -67,7 +67,7 @@ const Register = () => {
 
     const registerDetails = [
         { name: "Name", value: name, type: "text", funct: setName, placeholder: "Enter your Full Name" },
-        { name: "Phone Number", value: phno, type: "number", funct: (s: string) => setPhno(parseInt(s)), placeholder: "Enter your Phone No (+91)" },
+        { name: "Phone Number", value: phno, type: "number", funct: (s: string) => setPhno(parseInt(s) || 0), placeholder: "Enter your Phone No (+91)" },
         { name: "Password", value: pass, type: "password", funct: setPass, placeholder: "Enter your Password" },
         { name: "Repeat Password", value: repeatPass, type: "password", funct: setRepeatPass, placeholder: "Repeat your Password" }
     ];
@@ -78,7 +78,7 @@ const Register = () => {
                 {alert}
                 <button className="font-black z-10" onClick={() => setAlert('')}>x</button>
             </div>
-            <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center bg-[#3A98B9] py-10 px-7 md:p-10 md:pb-7 gap-5 text-[#FFF1DC] rounded-3xl w-full md:w-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center bg-[#4D6CB8] py-10 px-7 md:p-10 md:pb-7 gap-5 text-[#FFF1DC] rounded-3xl w-full md:w-auto">
                 {registerDetails.map((detail, index) => (
                     <label key={index} className="flex flex-col gap-1 md:text-lg w-full">
                         {detail.name}
@@ -87,7 +87,7 @@ const Register = () => {
                             onChange={(e) => detail.funct(e.target.value)}
                             type={detail.type} 
                             placeholder={detail.placeholder} 
-                            value={detail.value} />
+                            value={detail.value || ""} />
                         <Link to="/login" className={`${index === registerDetails.length - 1 ? "" : "hidden"} hover:underline self-end text-[13px] md:text-base`}>Already a User?</Link>
                     </label>
                 ))}

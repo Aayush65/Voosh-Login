@@ -85,7 +85,7 @@ const Login = () => {
     }
     
     const loginDetails = [
-        { name: "Phone No", value: phno, type: "number", funct: (s: string) => setPhno(parseInt(s) || 0), placeholder: "Enter your Phone No" },
+        { name: "Phone No", value: phno, type: "number", funct: (s: string) => setPhno(parseInt(s) || 0), placeholder: "Enter your Phone No (+91)" },
         { name: "Password", value: pass, type: "password", funct: setPass, placeholder: "Enter your Password" },
     ];
 
@@ -95,7 +95,7 @@ const Login = () => {
                 {alert}
                 <button className="font-black z-10" onClick={() => setAlert('')}>x</button>
             </div>
-            <div className="flex flex-col justify-center items-center bg-[#3A98B9] py-10 px-7 md:p-10 md:pb-7 gap-5 text-[#FFF1DC] rounded-3xl w-full md:w-auto">
+            <div className="flex flex-col justify-center items-center bg-[#4D6CB8] py-10 px-7 md:p-10 md:pb-7 gap-5 text-[#FFF1DC] rounded-3xl w-full md:w-auto">
                 {loginDetails.map((detail, index) => (
                     <label key={index} className="flex flex-col gap-1 md:text-lg w-full">
                         {detail.name}
@@ -108,10 +108,7 @@ const Login = () => {
                         <Link to="/register" className={`hover:underline self-start text-[13px] md:text-base ${index === loginDetails.length - 1 ? "": "hidden"}`}>Register Here</Link>
                     </label>
                 ))}
-                <div className="flex flex-col justify-start gap-1 self-start">
-                    <button onClick={() => setIsTestLogin("user")} className="text-[13px] md:text-base flex justify-start hover:underline">Test User Login</button>
-                    <button onClick={() => setIsTestLogin("admin")} className="text-[13px] md:text-base flex justify-start hover:underline">Test Admin Login</button>
-                </div>
+                <button onClick={() => setIsTestLogin("user")} className="bg-gray-700 p-2 rounded-lg text-[13px] md:text-base flex justify-start active:scale-105">Test User Login</button>
                 <button type="submit" onClick={handleSubmit} className="bg-gray-700 p-3 px-4 rounded-xl md:text-lg active:scale-105">Submit</button>
             </div>
         </div>
