@@ -13,18 +13,14 @@ const MainSite = () => {
             return;
         async function fetchToken() {
             const values = await getAccessToken();
-            console.log(values);
-            if (values && values.name){
+            if (values && values.name)
                 setName(values.name);
-            }
         }
         fetchToken();
     }, []);
 
     
-    return localStorage.getItem("accessToken") ? (
-        <HomePage />
-    ) : <Navigate to='/login' />
+    return localStorage.getItem("accessToken") ? <HomePage /> : <Navigate to='/login' />
 }
 
 export default MainSite
