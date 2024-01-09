@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     name: String,
-    PhnNo: {
+    phno: {
         type: Number,
         unique: true,
     },
