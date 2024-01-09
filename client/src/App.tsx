@@ -24,12 +24,12 @@ function App() {
 		let i = 0;
 		const id = setInterval(async () => {
 			const res = await ping();
-			if (res || i > 10)
+			if (res || i > 5)
 				clearInterval(id);
 			if (i > 10)
 				setIsTimeout(true);
 			i ++;
-		}, 500);
+		}, 1500);
 		ping();
 	}, [])
 
