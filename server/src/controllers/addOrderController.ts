@@ -5,7 +5,7 @@ import OrderModel from '../models/Orders';
 export default async function addOrderController(req: Request, res: Response) {
     try {
         const { order, sub_total } = req.body;
-        if (!order || typeof sub_total !== "number" || sub_total > 0 ) {
+        if (!order || typeof sub_total !== "number" || sub_total <= 0 ) {
             badRequest(res);
             return;
         }
