@@ -5,6 +5,9 @@ import { config } from 'dotenv';
 import mongoose from 'mongoose';
 import addUserController from './controllers/addUserController';
 import loginUserController from './controllers/loginUserController';
+import AuthMiddleWare from './middlewares/AuthMiddleware';
+import getOrderController from './controllers/getOrderController';
+import addOrderController from './controllers/addOrderController';
 
 config();
 const app = express();
@@ -16,6 +19,11 @@ app.get("/", (req: Request, res: Response) => res.send("Hello World!!"));
 
 app.post("/add-user", addUserController);
 app.post("/login-user", loginUserController);
+
+app.use(AuthMiddleWare);
+app.post("/add-order", addOrderController);
+app.post("/get-order", getOrderController);
+
 
 mongoose.connect(process.env.MONGO_URL!)
     .then(() => {
