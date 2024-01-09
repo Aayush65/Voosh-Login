@@ -27,8 +27,8 @@ export async function issueTokenController(req: Request, res: Response) {
             return;
         }
         const _id = decodedjwt._id;
-        const accessToken = jwt.sign({ _id, isAccessToken: true }, (process.env.SECRET_KEY as string), {expiresIn: '1m'});
-        const refreshToken = jwt.sign({ _id, isAccessToken: false }, (process.env.SECRET_KEY as string), {expiresIn: '5m'});
+        const accessToken = jwt.sign({ _id, isAccessToken: true }, (process.env.SECRET_KEY as string), {expiresIn: '30m'});
+        const refreshToken = jwt.sign({ _id, isAccessToken: false }, (process.env.SECRET_KEY as string), {expiresIn: '1d'});
     
         const userData = await UserModel.findById({ _id });
         if (!userData) {
