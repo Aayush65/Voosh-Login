@@ -6,7 +6,7 @@ import { encrypt } from '../utils/hash';
 export default async function addUserController(req: Request, res: Response) {
     try {
         const { name, phno, pass } = req.body;
-        if (!name || !phno || !pass || phno.toString().length !== 10) {
+        if (!name || !pass || typeof phno !== "number" || phno.toString().length !== 10) {
             badRequest(res);
             return;
         }
