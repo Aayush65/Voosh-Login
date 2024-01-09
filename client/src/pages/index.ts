@@ -4,6 +4,8 @@ import Login from "./Login";
 import Register from "./Register";
 import HomePage from "./HomePage";
 import FirstLoad from "./FirstLoad";
+import Orders from "./Orders";
+import NewOrder from "./NewOrder";
 
 export {
     ServerError,
@@ -12,4 +14,6 @@ export {
     Register,
     FirstLoad,
     HomePage,
+    Orders,
+    NewOrder,
 }
