@@ -9,6 +9,6 @@ const orderSchema = new Schema({
     order: String,
 });
 
-const OrderModel = mongoose.model("User", orderSchema);
+const OrderModel = mongoose.model("Orders", orderSchema);
 
 export default OrderModel;
