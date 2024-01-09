@@ -8,6 +8,7 @@ import loginUserController from './controllers/loginUserController';
 import AuthMiddleWare from './middlewares/AuthMiddleware';
 import getOrderController from './controllers/getOrderController';
 import addOrderController from './controllers/addOrderController';
+import { issueTokenController } from './controllers/issueTokenController';
 
 config();
 const app = express();
@@ -21,6 +22,7 @@ app.post("/add-user", addUserController);
 app.post("/login-user", loginUserController);
 
 app.use(AuthMiddleWare);
+app.get("/renew-token", issueTokenController);
 app.post("/add-order", addOrderController);
 app.post("/get-order", getOrderController);
 
