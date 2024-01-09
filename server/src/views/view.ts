@@ -8,10 +8,6 @@ export function created(res: Response, message: any) {
     res.status(201).json(message);
 }
 
-export function statusOkayNoMsg(res: Response, message: any) {
-    res.status(200).json(message);
-}
-
 export function badRequest(res: Response) {
     res.status(400).json({message: 'Bad Request'});
 }
@@ -20,7 +16,7 @@ export function unauthAccess(res: Response) {
     res.status(401).json({message: 'Unauthorised'});
 }
 
-export function wrongCredentials(res: Response) {
+export function forbidden(res: Response) {
     res.status(403).json({message: 'Forbidden'});
 }
 
