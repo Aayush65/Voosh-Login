@@ -1,6 +1,6 @@
 import express from 'express';
-import { Request, Response } from 'express';
-// import cors from 'cors';
+import { Response } from 'express';
+import cors from 'cors';
 import { config } from 'dotenv';
 import mongoose from 'mongoose';
 import addUserController from './controllers/addUserController';
@@ -14,9 +14,9 @@ config();
 const app = express();
 
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
-app.get("/", (req: Request, res: Response) => res.send("Hello World!!"));
+app.get("/", (_, res: Response) => res.status(200).send({message: "Sever Online"}));
 app.get("/renew-token", issueTokenController);
 
 app.post("/add-user", addUserController);
