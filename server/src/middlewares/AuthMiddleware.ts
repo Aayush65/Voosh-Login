@@ -11,12 +11,12 @@ interface jwtPayload {
 
 export default async function AuthMiddleWare(req: Request, res: Response, next: NextFunction) {
     try {
-        const authrisationToken = req.headers.authorization;
-        if (!authrisationToken) {
+        const authorisationToken = req.headers.authorization;
+        if (!authorisationToken) {
             unauthAccess(res);
             return;
         }
-        const jwtToken = authrisationToken.split(' ')[1];
+        const jwtToken = authorisationToken.split(' ')[1];
         const decodedjwt = (jwt.verify(jwtToken, (process.env.SECRET_KEY as string)) as jwtPayload);
 
         if (!decodedjwt || !decodedjwt.isAccessToken) {
