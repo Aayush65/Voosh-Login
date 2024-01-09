@@ -1,13 +1,11 @@
-import { useContext } from "react"
-import { context } from "../context"
+import { Navbar } from "../components";
 
 
 const HomePage = () => {
-    const { name } = useContext(context);
 
     return (
         <div className='w-full min-h-screen bg-[#EEEEEE]'>
-            <h1>Hi {name}</h1>
+            <Navbar />
         </div>
     )
 }
