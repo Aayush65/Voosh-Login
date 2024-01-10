@@ -1,7 +1,7 @@
 {
   "name": "voosh-portal",
   "private": true,
-  "homepage": "https://aayush65.github.io/Voosh-Portal",
+  "homepage": "https://aayush65.github.io/voosh-portal",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
