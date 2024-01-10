@@ -15,7 +15,7 @@ jobs:
           - 19.x
     steps:
       - name: Navigating to client directory
-        run: cd ./client/
+        run: cd client
       - uses: actions/checkout@v3
       - name: Navigating to client directory
         run: cd client
