@@ -34,7 +34,7 @@ function App() {
 	}, [])
 
 	return isServerActive ? (
-		<Router>
+		<Router basename="./voosh-portal/">
 			<Routes>
 				<Route path="/" element={<MainSite />} />
 				<Route path="/login" element={<Login />} />
