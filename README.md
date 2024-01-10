@@ -5,7 +5,7 @@ It is a simple web app with a login/registration page along with a homepage with
 
 All the pages have the added benefit of JWT authentication and authorisation.
 
-You can experience this site [here](voosh-portal.aayush65.com).
+You can experience this site [here](https://voosh-portal.aayush65.com).
 
 ## JWT Authentication and Authorisation
 
