@@ -14,14 +14,14 @@ jobs:
         node-version:
           - 19.x
     steps:
+      - name: Navigating to client directory
+        run: cd ./client/
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
-      - name: Navigating to client directory
-        run: cd client
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
