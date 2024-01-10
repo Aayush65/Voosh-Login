@@ -6,6 +6,7 @@ import { context } from "../context";
 interface OrderType {
     "order": string;
     "sub_total": number;
+    "phno": number;
 }
 
 const Orders = () => {
@@ -43,17 +44,18 @@ const Orders = () => {
 
     let total = 0;
     return allOrders.length ? (
-        <div className="m-20 p-6 flex-col justify-center items-center">
-            <h1 className="text-2xl font-bold">Your Orders: </h1>
+        <div className="w-1/2 mt-12 mx-auto p-10 flex-col gap-10">
+            <h1 className="text-2xl font-bold flex justify-center mb-5">Your Orders: </h1>
             {allOrders.map((entry, index) => {
                 total += entry["sub_total"];
                 return (
-                <div className="flex items-center justify-around text-lg text-[#FFF1DC] font-medium bg-[#4D6CB8] m-2" key={index}>
-                    <div className="">{entry.order}</div>
-                    <div className="">₹{entry["sub_total"]}</div>
+                <div className="w-3/4 flex items-center justify-around text-lg text-[#FFF1DC] font-medium bg-[#4D6CB8] mt-2 mx-auto p-3 rounded-lg" key={index}>
+                    <div>{entry.order}</div>
+                    <div>₹{entry["sub_total"]}</div>
                 </div>
             )})}
-            <h1 className="text-2xl font-bold">Total: ₹{total}</h1>
+            <h2 className="mt-4 text-xl font-bold flex justify-center">Ordered from: {allOrders[0].phno}</h2>
+            <h1 className="mt-8 text-2xl font-bold flex justify-center">Grand Total: ₹{total}</h1>
         </div>
     ) : <p className="text-xl text-center m-20">You have no orders</p>;
 }
