@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainSite from "./MainSite";
-import { Login, Register, ServerError, FirstLoad } from "./pages";
+import { Login, Register, ServerError, NonExistant, FirstLoad } from "./pages";
 import { useState, useEffect } from "react";
 import { siteLoc } from "./constants";
 
@@ -39,7 +39,7 @@ function App() {
 				<Route path="/" element={<MainSite />} />
 				<Route path="/login" element={<Login />} />
 				<Route path="/register" element={<Register />} />
-				{/* <Route path="/*" element={<NonExistant />} /> */}
+				<Route path="/*" element={<NonExistant />} />
 			</Routes>
 		</Router>
 	) : isTimeout ? <ServerError /> : <FirstLoad />
