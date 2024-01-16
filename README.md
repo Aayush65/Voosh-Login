@@ -29,7 +29,7 @@ Some of the key feature includes:
 - Tailwind
 - JWT
 
-# Tech Stack (Backend)
+## Tech Stack (Backend)
 
  - NodeJS
  - Express
